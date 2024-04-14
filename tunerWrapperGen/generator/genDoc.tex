@@ -1,0 +1,185 @@
+\documentclass[]{article}
+\usepackage[a4paper, left=3cm, right=3cm, top=2cm]{geometry}
+
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage[]{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\PassOptionsToPackage{hyphens}{url} % url is loaded by hyperref
+\usepackage[unicode=true]{hyperref}
+\hypersetup{
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{0}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+% set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
+
+\date{}
+
+\begin{document}
+
+\begin{enumerate}
+
+\item
+  To write a wrapper and/or tuner for a solver, make a new python file
+  (version \textgreater{}= 3.6, tested on 3.9) and import the
+  \texttt{Solver} and \texttt{Parameter} classes from the generator.
+  Make sure that you use the correct path, e.g.~if you're in the
+  \texttt{scripts} folder then use \texttt{from\ generator.generator}.
+\item
+  Specify tuning parameters by creating a list with instances of the
+  \texttt{Parameter} class using the following arguments:
+\end{enumerate}
+
+\begin{verbatim}
+name : str
+  Required argument that specifies the name of the parameter.
+
+value : float | int | str
+  Required argument with a predefined value of the parameter.
+
+tuning_range : list(float | int | str)
+  Optional argument that specifies the interval of continuous or integer
+  tuning variables or all the options of categorical ones.
+  Defaults to empty list.
+
+input_type : type
+  Optional argument that specifies what kind of values the
+  parameter attains.
+  Must be `float`, `int` or `str`.
+  Defaults to type of given `value`.
+
+optimization_type : str
+  Optional argument that specifies how the variable is treated
+  when tuning.
+  Must be `"continuous"`, `"integer"` or `"categorical"`.
+  Default depends on type of given `value` as follows:
+  `float` -> `"continuous"`,
+  `int` -> `"integer"`,
+  `str` -> `"categorical"`
+
+description : str
+  Optional argument that specifies a short description of the parameter
+  and should fit into half a line.
+  Defaults to empty string.
+
+info : str
+  Optional argument that provides more information than the description.
+  Will be broken into multiple lines if necessary.
+  Defaults to empty string.
+\end{verbatim}
+
+\begin{enumerate}
+
+\setcounter{enumi}{2}
+\tightlist
+\item
+  Create an instance of \texttt{Solver} using the following arguments:
+\end{enumerate}
+
+\begin{verbatim}
+name : str
+  Required argument that specifies the name of the solver.
+
+params : list(Parameter)
+  Optional argument that defines all the tuning parameters.
+  Defaults to empty list.
+
+paths : list(str)
+  Optional argument that specifies all paths of the solver
+  which are needed for calling it and will be added to the workspace.
+  Defaults to empty list.
+
+preparation : str
+  Optional argument that is valid MATLAB code, which is needed
+  to prepare all input options of the solver.
+  Defaults to empty string.
+
+call : str
+  Optional argument that is valid MATLAB code, which calls the solver
+  and processes the output as needed.
+  Defaults to empty string.
+
+tune_cases : list(list(Parameter))
+  Optional argument that specifies more predefined parameter options
+  that can be selected when calling the wrapper.
+  Defaults to empty list.
+\end{verbatim}
+
+\begin{enumerate}
+
+\setcounter{enumi}{3}
+\tightlist
+\item
+  Call the desired wrapper or tuner writing method on the defined solver
+  instance:
+\end{enumerate}
+
+\begin{verbatim}
+Solver.write_wrapper(save_path)
+  save_path : str
+    Optional argument that specifies path to which the wrapper
+    will be saved.
+    Defaults to path that the script is executed from.
+
+Solver.write_tuner(save_path)
+  save_path : str
+    Optional argument that specifies path to which the tuner
+    will be saved.
+    Defaults to path that the script is executed from.
+\end{verbatim}
+
+To make structural changes to all wrappers and tuners edit the
+\texttt{WRAPPER\_TEMPLATE.txt} or \texttt{TUNER\_TEMPLATE.txt}. Make
+sure to not alter the keywords, unless you intend to edit them in
+\texttt{data.py} too. All solver scripts that require this change then
+need to be run again.
+
+See \texttt{example.py} for a showcase of an ideal structure for such a
+script. The files \texttt{wSOLVER.m} and \texttt{tSOLVER.m} were
+generated with this script.
+
+Author: Maximilian Stollmayer, maximilian.stollmayer@univie.ac.at
+
+\end{document}

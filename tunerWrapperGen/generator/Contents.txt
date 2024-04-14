@@ -1,0 +1,52 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% generator %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+contains the templates and the code for generating the wrapper and the tuner. If you want to change the general code of the wrappers and the tuners you must change the templates.
+
+generator.py:
+************
+Defines Parameter and Solver classes for writing wrapper and tuner files.
+
+To write a wrapper and/or tuner for a solver, make a new python file
+(version >= 3.6, tested on 3.9) and import the `Solver` and `Parameter`
+classes from the generator.
+
+Specify tuning parameters by creating a list with instances of the
+`Parameter` class.
+
+Create an instance of `Solver` and call the methods `write_wrapper()` or
+`write_tuner()` on it.
+
+If there is a change in all wrappers or tuner then edit the templates
+and run all the scripts again.
+If there is a change in a solver then only change the corresponding
+script file and run it again.
+
+See `example.py` for a showcase of an ideal structure for such a script.
+The files `wSOLVER.m` and `tSOLVER.m` were generated with this script.
+
+Author: Maximilian Stollmayer, maximilian.stollmayer@univie.ac.at
+
+modified by Romana Jezek
+
+data.py:
+*******
+Predefined data for the generator.
+
+utils.py:
+********
+Helper functions for the generator.
+
+example.py:
+**********
+Example usage of wrapper and tuner generation.
+
+TUNER_TEMPLATE.txt:
+******************
+the tuner template contains the general code for the tuners
+
+WRAPPER_TEMPLATE.txt:
+********************
+the tuner template contains the general code for the wrappers
+
+
+

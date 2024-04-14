@@ -1,0 +1,20 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% tunerWrapperGen %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+This folder contains the python files for creating the tuner and wrapper files.
+It also contains the file printSolverList.m that can be used to create the list of all solver names in this folder.
+
+<solvername.py>:
+***************
+Contains the solver dependent code for the wrapper and the parameters for the tuner.
+
+GBOsolvers:
+**********
+contains the solvers for gradient based optimization. They are not used at the moment.
+
+generator:
+*********
+contains the templates and the code for generating the wrapper and the tuner. If you want to change the general code of the wrappers and the tuners you must change the templates.
+
+deprecated:
+**********
+contains solvers that are not used anymore

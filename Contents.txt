@@ -1,0 +1,55 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% TTSOpt %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+this folder contains the following files:
+
+ 1. the setup files for Matlab and Octave
+ 2. getHeaders.m: function for collecting the heades of .m files
+ 3. MasterDoc.tex: the LaTeX documentation file. This should be updated if a collection or a solver is added.
+ 4. the MasterDoc.pdf file
+ 5. a problems.txt file where the problems with solvers are documented.
+ 6. the README file
+ 7. the solverList with all the solvers downloaded so far and for which problems they can be used.
+
+It contains the following folders:
+
+EXE:
+***
+in this folder the mex files for CUTEst that are used when using TEprob are stored temporarily. If you don't use CUTEst the folder should be empty.
+
+HIT:
+***
+This folder contains the data of the best dolutions for every problem and every problem collection
+
+PYTHON:
+******
+This folder contains the Pyhton interfaces for solvers that have no Octave interface.
+
+RES:
+***
+This folder contains the results of testing and tuning.
+
+SOLVERS:
+*******
+This folder contains all solvers that can be tested and tuned. One can add new solvers to this directory.
+Every solver folder contains the file bestParamsPerDim.mat that will be created during the tuning process.
+
+TE:
+**
+this folder is the main directory for the test environment
+ 
+TEprob:
+******
+This folder contains the problem collections, the programs that are used to run the problems and .mat files that contain information for all problem collections.
+
+TUNERS:
+******
+In this folder the tuner files are saved after creating them with the tuner and wrapper generator.
+
+tunerWrapperGen:
+***************
+This folder contains the python files for creating the tuner and wrapper files.
+It also contains the file printSolverList.m that can be used to create the list of all solver names in this folder.
+
+WRAPPERS:
+********
+In this folder the wrapper files are saved after creating them with the tuner and wrapper generator.

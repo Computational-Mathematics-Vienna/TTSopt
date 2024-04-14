@@ -11,7 +11,7 @@ Authors:
 - Morteza Kimiaei:<morteza.kimiaei@univie.ac.at>
 - Romana Jezek <romana.jezek@univie.ac.at>
 - Maximilian Stollmayer
-- Romana Kostal
+- Roman Kostal
 
 Support by the Austrian Science Fund FWF under the contract number  
 P 34317 is gratefully acknowledged.

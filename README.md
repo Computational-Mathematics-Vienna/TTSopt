@@ -43,6 +43,8 @@ Their licences can be found on the following github pages:
   
 only in the Octave version:
 - for pdfo: https://github.com/pdfo/pdfo?tab=BSD-3-Clause-1-ov-file
+
+only in the Matlab version:
 - for prima: https://github.com/libprima/prima/blob/main/LICENCE.txt
 
 In case of errors, consult the installation guide in Masterdoc.pdf.

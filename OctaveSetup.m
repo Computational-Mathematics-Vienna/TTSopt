@@ -17,9 +17,9 @@ miplib = yes_or_no("Would you like to use MIPLIB (Test problems for mixed intege
 pdfo = yes_or_no("Would you like to install pdfo (Powell solvers)? Enter yes or no: ");
 admin = yes_or_no("Do you have root rights? Enter yes or no: ");
 WORKpath = pwd;
-if ~strcmp(substr(WORKpath,-10),"TEallFinal")
-  WORKpath = input(['Please enter the directory of TEallFinal ' ,...
-  '(e.g. "~/Software/TEallFinal)":'])
+if ~strcmp(substr(WORKpath,-10),"TTSopt-1.0.0")
+  WORKpath = input(['Please enter the directory of TTSopt-1.0.0 ' ,...
+  '(e.g. "~/Software/TTSopt-1.0.0)":'])
 end
 
 if exist([WORKpath,'/HIT/CUTEst2']) ~= 0

@@ -17,9 +17,24 @@ miplib = yes_or_no("Would you like to use MIPLIB (Test problems for mixed intege
 pdfo = yes_or_no("Would you like to install pdfo (Powell solvers)? Enter yes or no: ");
 admin = yes_or_no("Do you have root rights? Enter yes or no: ");
 WORKpath = pwd;
-if ~strcmp(substr(WORKpath,-10),"TEallFinal")
-  WORKpath = input(['Please enter the directory of TEallFinal ' ,...
-  '(e.g. "~/Software/TEallFinal)":'])
+if ~strcmp(substr(WORKpath,-10),"TTSopt-1.0.0")
+  WORKpath = input(['Please enter the directory of TTSopt-1.0.0 ' ,...
+  '(e.g. "~/Software/TTSopt-1.0.0)":'])
+end
+
+if exist([WORKpath,'/HIT/CUTEst2']) ~= 0
+  content = ls([WORKpath,'/HIT/CUTEst2']);
+  if ~isempty(content)
+    [s,w] = system(['cp ',WORKpath,'/HIT/CUTEst2/* ',WORKpath,'/HIT/CUTEst']);
+    if s > 0
+      error(['Copying HIT/CUTEst2 to HIT/CUTEst failed. Please copy it manually', ...
+      ' and delete the folder CUTEst2']);
+    end
+  end
+  [s,w] = system(['rm -r ',WORKpath,'/HIT/CUTEst2']);
+  if s > 0
+    error(['Deleting the folder HIT/CUTEst2 failed. Please delete it manually.']);
+  end
 end
 
 [s,w] = system('wget --version');
@@ -317,7 +332,7 @@ if nomad
   end
   
   eval(['cd ',WORKpath,'/SOLVERS'])
-  if exist('nomad') == 1
+  if exist('nomad') == 7
     system('rm -rf nomad')
   end  
   if ~exist('v.4.4.0.tar.gz')
@@ -356,7 +371,7 @@ end
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% setup for CUTEST %%%%%%%%%%%%%%%%%%%%%%%%%%
 if cutest
-  if exist([WORKpath,'/TEprob/Collections/CUTEst'])
+  if exist([WORKpath,'/TEprob/Collections/CUTEst']) ~= 0
     setenv('ARCHDEFS',[WORKpath,'/TEprob/Collections/CUTEst/INSTALLATION/archdefs'])
     setenv('SIFDECODE',[WORKpath,'/TEprob/Collections/CUTEst/INSTALLATION/sifdecode'])
     setenv('CUTEST',[WORKpath,'/TEprob/Collections/CUTEst/INSTALLATION/cutest'])

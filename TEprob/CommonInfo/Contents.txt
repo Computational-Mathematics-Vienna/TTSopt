@@ -1,0 +1,29 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% CommonInfo %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+1. availableCollections.mat:
+ contains the cell array availableCollections with the names of the collections with already .mat files collected in the folder DotMat. At  
+ the moment these are:
+	bcp
+	eiqp2
+	global
+	ibm
+	inf
+	lgmiqp
+	Liuzzi
+	minlp
+	MIPLIB
+	MIPLIB_integer
+	morg
+	prince
+	
+2. overview_Table.mat:
+ contains the struct OT that contains for every collection (row name) the following information (column name):
+
+ n_of_problems (number of problems)
+ mean_n_of_vars (mean number of variables)
+ vars_quartiles (quartiles of number of variables)
+ mean_n_of_constr (mean number of constraints)
+ constr_quartiles (quartiles of number of constraints)
+
+
+

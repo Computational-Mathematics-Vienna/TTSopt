@@ -32,6 +32,21 @@ if ~strcmp(extractAfter(WORKpath,length(WORKpath)-10),"TEallFinal")
   '(e.g. ~/Software/TEallFinal):'])
 end
 
+if exist([WORKpath,'/HIT/CUTEst2']) ~= 0
+  content = ls([WORKpath,'/HIT/CUTEst2']);
+  if ~isempty(content)
+    [s,w] = system(['cp ',WORKpath,'/HIT/CUTEst2/* ',WORKpath,'/HIT/CUTEst']);
+    if s > 0
+      error(['Copying HIT/CUTEst2 to HIT/CUTEst failed. Please copy it manually', ...
+      ' and delete the folder CUTEst2']);
+    end
+  end
+  [s,w] = system(['rm -r ',WORKpath,'/HIT/CUTEst2']);
+  if s > 0
+    error(['Deleting the folder HIT/CUTEst2 failed. Please delete it manually.']);
+  end
+end
+
 [s,w] = system('wget --version');
 if s > 0
   if admin
@@ -622,7 +637,7 @@ if nomad
   
   
   eval(['cd ',WORKpath,'/SOLVERS'])
-  if exist('nomad') == 1
+  if exist('nomad') == 7
     system('rm -rf nomad')
   end
   if ~exist('v.4.4.0.tar.gz')
@@ -660,7 +675,7 @@ end
 
 %%%%%%%%%%%%%%%%%%%%%%%%%% setup for CUTEST %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 if cutest
-  if exist([WORKpath,'/TEprob/Collections/CUTEst'])
+  if exist([WORKpath,'/TEprob/Collections/CUTEst']) ~= 0
     setenv('ARCHDEFS',[WORKpath,'/TEprob/Collections/CUTEst/INSTALLATION/archdefs'])
     setenv('SIFDECODE',[WORKpath,'/TEprob/Collections/CUTEst/INSTALLATION/sifdecode'])
     setenv('CUTEST',[WORKpath,'/TEprob/Collections/CUTEst/INSTALLATION/cutest'])

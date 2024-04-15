@@ -1,0 +1,43 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% TEprob %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+This folder contains the problem collections, the programs that are used to run the problems and .mat files that contain information for all problem collections
+
+Collections: 
+***********
+In this folder you can find all the problem collections. You can add a problem collection in the following way:
+- Download the problem collection into this folder
+- Install it if necessary
+- create DotMat files like in /users/rjezek/OctaveWorkSpace/TEallFinal/TEprob/Collections/CUTEst/createStruct.m
+  you have to create your own createStruct because it depends on the problem structure of your collection
+- go to the TE folder and adapt TESTinit and TESTprob adding the new TEcase.
+
+CommonCode:
+**********
+this folder contains the common code for preparing the problem collections for the test environment
+
+CommonInfo:
+**********
+1. availableCollections.mat:
+ contains the cell array availableCollections with the names of the collections with already .mat files collected in the folder DotMat. At  
+ the moment these are:
+	bcp
+	eiqp2
+	global
+	ibm
+	inf
+	lgmiqp
+	Liuzzi
+	minlp
+	MIPLIB
+	MIPLIB_integer
+	morg
+	prince
+	
+2. overview_Table.mat:
+ contains the struct OT that contains for every collection (row name) the following information (column name):
+
+ n_of_problems (number of problems)
+ mean_n_of_vars (mean number of variables)
+ vars_quartiles (quartiles of number of variables)
+ mean_n_of_constr (mean number of constraints)
+ constr_quartiles (quartiles of number of constraints)

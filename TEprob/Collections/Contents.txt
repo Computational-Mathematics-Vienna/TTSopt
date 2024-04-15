@@ -1,0 +1,25 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Collections %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+In this folder you can find all the problem collections. You can add a problem collection in the following way:
+- Download the problem collection into this folder
+- Install it if necessary
+- create DotMat files like in /users/rjezek/OctaveWorkSpace/TEallFinal/TEprob/Collections/CUTEst/createStruct.m
+  you have to create your own createStruct because it depends on the problem structure of your collection
+- create TE.mat with the function TEinit.m in the folder TE and <collection>_Table.mat
+- go to the TE folder and adapt TESTinit and TESTprob adding the new TEcase.
+- update the .mat files in CommonInfo
+
+<collection>:
+************
+every collection folder contains:
+
+1. DOTMAT: contains the .mat files that are used in the test environment
+2. DOTM (except CUTEst): contains the Matlab - Baron interface for every problem
+3. TE.mat: contains the structure TE with the following information for every problem in the collection:
+ con: the type of constraints
+ dim: the dimension
+ name: the problem name
+ points: if it is available, the minimum found so far, the accuracy and the best point
+ run: information about the run (number of evaluations, solver name, ...)
+4. <collection>_Table.mat: structure Tab with the above information collected for every problem
+

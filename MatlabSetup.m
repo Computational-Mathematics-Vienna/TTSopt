@@ -27,9 +27,9 @@ while (admin ~= 1 && admin ~= 0)
    admin = input("Please enter 1 or 0:")
 end
 WORKpath = pwd;
-if ~strcmp(extractAfter(WORKpath,length(WORKpath)-10),"TEallFinal")
-  WORKpath = input(['Please enter the directory of TEallFinal ',...
-  '(e.g. ~/Software/TEallFinal):'])
+if ~strcmp(extractAfter(WORKpath,length(WORKpath)-10),"TTSopt-1.0.0")
+  WORKpath = input(['Please enter the directory of TTSopt-1.0.0 ',...
+  '(e.g. ~/Software/TTSopt-1.0.0):'])
 end
 
 if exist([WORKpath,'/HIT/CUTEst2']) ~= 0

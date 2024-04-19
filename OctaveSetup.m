@@ -22,21 +22,6 @@ if ~strcmp(substr(WORKpath,-10),"TTSopt-1.0.0")
   '(e.g. "~/Software/TTSopt-1.0.0)":'])
 end
 
-if exist([WORKpath,'/HIT/CUTEst2']) ~= 0
-  content = ls([WORKpath,'/HIT/CUTEst2']);
-  if ~isempty(content)
-    [s,w] = system(['cp ',WORKpath,'/HIT/CUTEst2/* ',WORKpath,'/HIT/CUTEst']);
-    if s > 0
-      error(['Copying HIT/CUTEst2 to HIT/CUTEst failed. Please copy it manually', ...
-      ' and delete the folder CUTEst2']);
-    end
-  end
-  [s,w] = system(['rm -r ',WORKpath,'/HIT/CUTEst2']);
-  if s > 0
-    error(['Deleting the folder HIT/CUTEst2 failed. Please delete it manually.']);
-  end
-end
-
 [s,w] = system('wget --version');
 if s > 0
   if admin

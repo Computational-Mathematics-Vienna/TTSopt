@@ -891,10 +891,10 @@ if miplib
   eval(['cd /',WORKpath,'/TEprob/Collections'])
 
   if ~exist('MIPLIB')
-    s = system('wget https://github.com/Computational-Mathematics-Vienna/TTSopt/MIPLIB.tar.gz')
+    s = system('wget https://github.com/Computational-Mathematics-Vienna/TTSopt/raw/main/bindata/MIPLIB.tar.gz')
     if s ~= 0
       error(['Please download the content of ',...
-      'https://github.com/Computational-Mathematics-Vienna/TTSopt/MIPLIB.tar.gz and save it  into the folder ',...
+      'https://github.com/Computational-Mathematics-Vienna/TTSopt/raw/main/bindata/MIPLIB.tar.gz and save it  into the folder ',...
       WORKpath,'/TEprob/Collections'])
     end
   end
@@ -904,10 +904,10 @@ if miplib
     error('tar failed. Please extract  manually')
   end
   if ~exist('MIPLIBint')
-    s = system('wget https://github.com/Computational-Mathematics-Vienna/TTSopt/MIPLIBint.tar.gz')
+    s = system('wget https://github.com/Computational-Mathematics-Vienna/TTSopt/raw/main/bindata/MIPLIBint.tar.gz')
     if s ~= 0
       error(['Please download the content of ',...
-      'https://github.com/Computational-Mathematics-Vienna/TTSopt/MIPLIB.tar.gz and save it into the folder ',...
+      'https://github.com/Computational-Mathematics-Vienna/TTSopt/raw/main/bindata/MIPLIBint.tar.gz and save it into the folder ',...
       WORKpath,'/TEprob/Collections'])
     end
   end

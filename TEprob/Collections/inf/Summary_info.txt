@@ -1,0 +1,8 @@
+Main source:
+Puranik, Y. and N. V. Sahinidis, Deletion presolve for accelerating infeasibility diagnosis in optimization models, INFORMS Journal on Computing, 29, 754-766, 2017.
+
+Which criteria were used?
+
+Which solvers were already used on these problems?
+
+Cited by:

@@ -637,7 +637,7 @@ end
 %%%%%%%%%%%%%%%%%%%%%%%%%% setup for MIPLIB %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 if miplib
-  eval(['cd /',WORKpath,'/TEprob/Collections'])
+  eval(['cd ',WORKpath,'/TEprob/Collections'])
 
   if ~exist('MIPLIB')
     s = system('wget https://arnold-neumaier.at/DFO/MIPLIB.tar.gz')
@@ -666,14 +666,14 @@ if miplib
     error('tar failed. Please extract MIPLIBint.tar.gz manually')
   end  
 
-  eval(['cd /',WORKpath])
+  eval(['cd ',WORKpath])
 end
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%% setup for prince %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 if princeColl
-  eval(['cd /',WORKpath,'/TEprob/Collections'])
+  eval(['cd ',WORKpath,'/TEprob/Collections'])
 
   if ~exist('prince')
     s = system('wget https://arnold-neumaier.at/DFO/prince.tar.gz')
@@ -715,7 +715,7 @@ if princeColl
     error('tar failed. Please extract princeMint.tar.gz manually')
   end
 
-  eval(['cd /',WORKpath])
+  eval(['cd ',WORKpath])
 end
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 

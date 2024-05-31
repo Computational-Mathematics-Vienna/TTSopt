@@ -13,8 +13,8 @@ more off
 
 nomad = yes_or_no("Would you like to install Nomad? Enter yes or no: ");
 cutest = yes_or_no("Would you like to install CUTEst? Enter yes or no: ");
-miplib = yes_or_no("Would you like to use MIPLIB (Test problems for mixed integer programming)? Enter yes or no: ")
-princeColl = yes_or_no("Would you like to use prince (Test problems for mixed integer programming)? Enter yes or no: ")
+miplib = yes_or_no("Would you like to use MIPLIB (Test problems for mixed integer programming)? Enter yes or no: ");
+princeColl = yes_or_no("Would you like to use prince (Test problems for mixed integer programming)? Enter yes or no: ");
 pdfo = yes_or_no("Would you like to install pdfo (Powell solvers)? Enter yes or no: ");
 admin = yes_or_no("Do you have root rights? Enter yes or no: ");
 WORKpath = pwd;

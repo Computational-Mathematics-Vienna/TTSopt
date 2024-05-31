@@ -22,6 +22,10 @@ miplib = input("Would you like to use MIPLIB (Test problems for mixed integer pr
 while (miplib ~= 1 && miplib ~= 0)
    miplib = input("Please enter 1 or 0:")
 end
+princeColl = input("Would you like to use prince (Test problems for mixed integer programming)? Enter 1 for yes or 0 for no: ")
+while (prince ~= 1 && miplib ~= 0)
+   miplib = input("Please enter 1 or 0:")
+end
 admin = input("Do you have root rights? Enter 1 for yes or 0 for no: ");
 while (admin ~= 1 && admin ~= 0)
    admin = input("Please enter 1 or 0:")
@@ -891,30 +895,80 @@ if miplib
   eval(['cd /',WORKpath,'/TEprob/Collections'])
 
   if ~exist('MIPLIB')
-    s = system('wget https://github.com/Computational-Mathematics-Vienna/TTSopt/raw/main/bindata/MIPLIB.tar.gz')
+    s = system('wget https://arnold-neumaier.at/DFO/MIPLIB.tar.gz')
     if s ~= 0
       error(['Please download the content of ',...
-      'https://github.com/Computational-Mathematics-Vienna/TTSopt/raw/main/bindata/MIPLIB.tar.gz and save it  into the folder ',...
+      'https://arnold-neumaier.at/DFO/MIPLIB.tar.gz and save it  into the folder ',...
       WORKpath,'/TEprob/Collections'])
     end
   end
   disp('MIPLIB: tar will be extracted')
   s = system('tar -xf MIPLIB.tar.gz')
   if s ~= 0
-    error('tar failed. Please extract  manually')
+    error('tar failed. Please extract  MIPLIB.tar.gz manually')
   end
   if ~exist('MIPLIBint')
-    s = system('wget https://github.com/Computational-Mathematics-Vienna/TTSopt/raw/main/bindata/MIPLIBint.tar.gz')
+    s = system('wget https://arnold-neumaier.at/DFO/MIPLIBint.tar.gz')
     if s ~= 0
       error(['Please download the content of ',...
-      'https://github.com/Computational-Mathematics-Vienna/TTSopt/raw/main/bindata/MIPLIBint.tar.gz and save it into the folder ',...
+      'https://arnold-neumaier.at/DFO/MIPLIBint.tar.gz and save it into the folder ',...
       WORKpath,'/TEprob/Collections'])
     end
   end
   disp('MIPLIBint: tar will be extracted')
   s = system('tar -xf MIPLIBint.tar.gz')
   if s ~= 0
-    error('tar failed. Please extract  manually')
+    error('tar failed. Please extract MIPLIBint.tar.gz manually')
+  end  
+
+  eval(['cd /',WORKpath])
+end
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% setup for prince %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+if princeColl
+  eval(['cd /',WORKpath,'/TEprob/Collections'])
+
+  if ~exist('prince')
+    s = system('wget https://arnold-neumaier.at/DFO/prince.tar.gz')
+    if s ~= 0
+      error(['Please download the content of ',...
+      'https://arnold-neumaier.at/DFO/prince.tar.gz and save it  into the folder ',...
+      WORKpath,'/TEprob/Collections'])
+    end
+  end
+  disp('MIPLIB: tar will be extracted')
+  s = system('tar -xf prince.tar.gz')
+  if s ~= 0
+    error('tar failed. Please extract  MIPLIB.tar.gz manually')
+  end
+  if ~exist('princeInt')
+    s = system('wget https://arnold-neumaier.at/DFO/princeInt.tar.gz')
+    if s ~= 0
+      error(['Please download the content of ',...
+      'https://arnold-neumaier.at/DFO/princeInt.tar.gz and save it into the folder ',...
+      WORKpath,'/TEprob/Collections'])
+    end
+  end
+  disp('princeInt: tar will be extracted')
+  s = system('tar -xf princeInt.tar.gz ')
+  if s ~= 0
+    error('tar failed. Please extract princeInt.tar.gz manually')
+  end 
+  if ~exist('princeMint')
+    s = system('wget https://arnold-neumaier.at/DFO/princeMint.tar.gz')
+    if s ~= 0
+      error(['Please download the content of ',...
+      'https://arnold-neumaier.at/DFO/princeMint.tar.gz and save it into the folder ',...
+      WORKpath,'/TEprob/Collections'])
+    end
+  end
+  disp('princeMint: tar will be extracted')
+  s = system('tar -xf princeMint.tar.gz')
+  if s ~= 0
+    error('tar failed. Please extract princeMint.tar.gz manually')
   end  
 
   eval(['cd /',WORKpath])

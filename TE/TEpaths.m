@@ -25,7 +25,7 @@ global CUTESTsrc SOLpath TEpath RESpath HITpath PDFpath ...
 % WORKpath      % path for directory where TE is run (not global)
 % MEX           %
 % WSOLdir       % 
-PATHinit = ['/',username,'/TTSopt-1.0.0/TEprob/Collections'];  
+PATHinit = ['/',username,'/TTSopt/TEprob/Collections'];  
 switch probCollect
   case 'CUTEst'
    TEpath = [PATHinit,'/CUTEst'];

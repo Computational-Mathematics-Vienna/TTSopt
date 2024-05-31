@@ -23,8 +23,8 @@ while (miplib ~= 1 && miplib ~= 0)
    miplib = input("Please enter 1 or 0:")
 end
 princeColl = input("Would you like to use prince (Test problems for mixed integer programming)? Enter 1 for yes or 0 for no: ")
-while (prince ~= 1 && miplib ~= 0)
-   miplib = input("Please enter 1 or 0:")
+while (princeColl ~= 1 && princeColl ~= 0)
+   princeColl = input("Please enter 1 or 0:")
 end
 admin = input("Do you have root rights? Enter 1 for yes or 0 for no: ");
 while (admin ~= 1 && admin ~= 0)

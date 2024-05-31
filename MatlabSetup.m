@@ -895,31 +895,35 @@ if miplib
   eval(['cd ',WORKpath,'/TEprob/Collections'])
 
   if ~exist('MIPLIB')
-    s = system('wget https://arnold-neumaier.at/DFO/MIPLIB.tar.gz')
-    if s ~= 0
-      error(['Please download the content of ',...
-      'https://arnold-neumaier.at/DFO/MIPLIB.tar.gz and save it  into the folder ',...
-      WORKpath,'/TEprob/Collections'])
+    if ~exist('MIPLIB.tar.gz')
+      s = system('wget https://arnold-neumaier.at/DFO/MIPLIB.tar.gz')
+      if s ~= 0
+        error(['Please download the content of ',...
+        'https://arnold-neumaier.at/DFO/MIPLIB.tar.gz and save it  into the folder ',...
+        WORKpath,'/TEprob/Collections'])
+      end
     end
-  end
-  disp('MIPLIB: tar will be extracted')
-  s = system('tar -xf MIPLIB.tar.gz')
-  if s ~= 0
-    error('tar failed. Please extract  MIPLIB.tar.gz manually')
+    disp('MIPLIB: tar will be extracted')
+    s = system('tar -xf MIPLIB.tar.gz')
+    if s ~= 0
+      error('tar failed. Please extract  MIPLIB.tar.gz manually')
+    end
   end
   if ~exist('MIPLIBint')
-    s = system('wget https://arnold-neumaier.at/DFO/MIPLIBint.tar.gz')
+    if ~exist('MIPLIBint.tar.gz')
+      s = system('wget https://arnold-neumaier.at/DFO/MIPLIBint.tar.gz')
+      if s ~= 0
+        error(['Please download the content of ',...
+        'https://arnold-neumaier.at/DFO/MIPLIBint.tar.gz and save it into the folder ',...
+        WORKpath,'/TEprob/Collections'])
+      end
+    end
+    disp('MIPLIBint: tar will be extracted')
+    s = system('tar -xf MIPLIBint.tar.gz')
     if s ~= 0
-      error(['Please download the content of ',...
-      'https://arnold-neumaier.at/DFO/MIPLIBint.tar.gz and save it into the folder ',...
-      WORKpath,'/TEprob/Collections'])
+      error('tar failed. Please extract MIPLIBint.tar.gz manually')
     end
   end
-  disp('MIPLIBint: tar will be extracted')
-  s = system('tar -xf MIPLIBint.tar.gz')
-  if s ~= 0
-    error('tar failed. Please extract MIPLIBint.tar.gz manually')
-  end  
 
   eval(['cd ',WORKpath])
 end
@@ -932,44 +936,50 @@ if princeColl
   eval(['cd ',WORKpath,'/TEprob/Collections'])
 
   if ~exist('prince')
-    s = system('wget https://arnold-neumaier.at/DFO/prince.tar.gz')
-    if s ~= 0
-      error(['Please download the content of ',...
-      'https://arnold-neumaier.at/DFO/prince.tar.gz and save it  into the folder ',...
-      WORKpath,'/TEprob/Collections'])
+    if ~exist('prince.tar.gz')
+      s = system('wget https://arnold-neumaier.at/DFO/prince.tar.gz')
+      if s ~= 0
+        error(['Please download the content of ',...
+        'https://arnold-neumaier.at/DFO/prince.tar.gz and save it  into the folder ',...
+        WORKpath,'/TEprob/Collections'])
+      end
     end
-  end
-  disp('MIPLIB: tar will be extracted')
-  s = system('tar -xf prince.tar.gz')
-  if s ~= 0
-    error('tar failed. Please extract  MIPLIB.tar.gz manually')
+    disp('MIPLIB: tar will be extracted')
+    s = system('tar -xf prince.tar.gz')
+    if s ~= 0
+      error('tar failed. Please extract  MIPLIB.tar.gz manually')
+    end
   end
   if ~exist('princeInt')
-    s = system('wget https://arnold-neumaier.at/DFO/princeInt.tar.gz')
-    if s ~= 0
-      error(['Please download the content of ',...
-      'https://arnold-neumaier.at/DFO/princeInt.tar.gz and save it into the folder ',...
-      WORKpath,'/TEprob/Collections'])
+    if ~exist('princeInt.tar.gz')
+      s = system('wget https://arnold-neumaier.at/DFO/princeInt.tar.gz')
+      if s ~= 0
+        error(['Please download the content of ',...
+        'https://arnold-neumaier.at/DFO/princeInt.tar.gz and save it into the folder ',...
+        WORKpath,'/TEprob/Collections'])
+      end
     end
-  end
-  disp('princeInt: tar will be extracted')
-  s = system('tar -xf princeInt.tar.gz ')
-  if s ~= 0
-    error('tar failed. Please extract princeInt.tar.gz manually')
-  end 
-  if ~exist('princeMint')
-    s = system('wget https://arnold-neumaier.at/DFO/princeMint.tar.gz')
+    disp('princeInt: tar will be extracted')
+    s = system('tar -xf princeInt.tar.gz ')
     if s ~= 0
-      error(['Please download the content of ',...
-      'https://arnold-neumaier.at/DFO/princeMint.tar.gz and save it into the folder ',...
-      WORKpath,'/TEprob/Collections'])
+      error('tar failed. Please extract princeInt.tar.gz manually')
     end
-  end
-  disp('princeMint: tar will be extracted')
-  s = system('tar -xf princeMint.tar.gz')
-  if s ~= 0
-    error('tar failed. Please extract princeMint.tar.gz manually')
   end  
+  if ~exist('princeMint')
+    if ~exist('princeMint.tar,gz')
+      s = system('wget https://arnold-neumaier.at/DFO/princeMint.tar.gz')
+      if s ~= 0
+        error(['Please download the content of ',...
+        'https://arnold-neumaier.at/DFO/princeMint.tar.gz and save it into the folder ',...
+        WORKpath,'/TEprob/Collections'])
+      end
+    end
+    disp('princeMint: tar will be extracted')
+    s = system('tar -xf princeMint.tar.gz')
+    if s ~= 0
+      error('tar failed. Please extract princeMint.tar.gz manually')
+    end
+  end
 
   eval(['cd ',WORKpath])
 end
